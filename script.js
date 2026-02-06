@@ -1,30 +1,30 @@
-// MENU MOBILE
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".menu");
-
-toggle.addEventListener("click", () => {
-  menu.classList.toggle("active");
-});
-
-// SCROLL SUAVE
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute("href"));
-    target.scrollIntoView({ behavior:"smooth" });
-    menu.classList.remove("active");
+// SIDEBAR SCROLL
+document.querySelectorAll(".nav-item").forEach(btn=>{
+  btn.addEventListener("click", ()=>{
+    const id = btn.dataset.target;
+    document.getElementById(id).scrollIntoView({
+      behavior:"smooth"
+    });
   });
 });
 
-// ANIMAÇÃO AO APARECER
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
+// COLLAPSIBLE SECTIONS
+document.querySelectorAll(".collapsible").forEach(title=>{
+  title.addEventListener("click", ()=>{
+    const cards = title.nextElementSibling;
+    cards.classList.toggle("hidden");
   });
 });
 
-document.querySelectorAll(".card, .section h3").forEach(el=>{
-  observer.observe(el);
+// SEARCH FILTER
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", ()=>{
+  const value = searchInput.value.toLowerCase();
+
+  document.querySelectorAll(".card").forEach(card=>{
+    const text = card.textContent.toLowerCase();
+    card.style.display = text.includes(value) ? "block" : "none";
+  });
 });
+
