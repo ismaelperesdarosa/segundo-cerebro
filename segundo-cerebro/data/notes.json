@@ -3,18 +3,21 @@
     "id": "html-basico",
     "title": "HTML Básico",
     "description": "Estrutura fundamental de páginas web.",
-    "tags": ["html", "frontend", "web"]
+    "category": "Frontend",
+    "tags": ["html", "web", "frontend"]
   },
   {
     "id": "css-arquitetura",
     "title": "Arquitetura CSS",
     "description": "Organização de estilos em projetos grandes.",
-    "tags": ["css", "arquitetura", "frontend"]
+    "category": "Frontend",
+    "tags": ["css", "arquitetura"]
   },
   {
     "id": "javascript-modular",
     "title": "JavaScript Modular",
-    "description": "Separação de responsabilidades em JS.",
-    "tags": ["javascript", "modularidade", "frontend"]
+    "description": "Separação de responsabilidades.",
+    "category": "Programação",
+    "tags": ["javascript", "modularidade"]
   }
 ]

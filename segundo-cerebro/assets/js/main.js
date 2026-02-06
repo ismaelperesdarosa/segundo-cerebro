@@ -1,3 +1,6 @@
-import { loadNotes } from "./modules/search.js";
+import "./modules/search.js";
+import { setupTheme } from "./modules/theme.js";
+import { setActiveNav } from "./modules/navigation.js";
 
-loadNotes();
+setupTheme();
+setActiveNav();
