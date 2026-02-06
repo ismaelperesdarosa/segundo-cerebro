@@ -24,8 +24,9 @@ body{
   z-index:1000;
 }
 
+/* LOGO */
 .logo{
-  color:#00d4ff;
+  color:#ffffff;
   font-size:1.4rem;
 }
 
@@ -40,7 +41,6 @@ body{
   border:none;
   color:#cbd5f5;
   cursor:pointer;
-  font-size:0.95rem;
 }
 
 .top-nav button:hover{
@@ -64,14 +64,13 @@ body{
   width:200px;
 }
 
-/* SOCIAL LINKS BASE */
+/* SOCIAL LINKS */
 .social-links{
   display:flex;
   gap:12px;
 }
 
-.social-links a,
-.footer-links a{
+.social-links a{
   text-decoration:none;
   font-size:0.9rem;
   padding:6px 10px;
@@ -81,27 +80,23 @@ body{
 }
 
 /* INSTAGRAM */
-.social-links a[href*="instagram.com"],
-.footer-links a[href*="instagram.com"]{
-  color:#ff4ecd;
+.social-links a[href*="instagram.com"]{
+  color:#ffffff;
   background:linear-gradient(45deg,#ff4ecd,#ffb347);
 }
 
-.social-links a[href*="instagram.com"]:hover,
-.footer-links a[href*="instagram.com"]:hover{
+.social-links a[href*="instagram.com"]:hover{
   box-shadow:0 0 15px rgba(255,78,205,.6);
   transform:scale(1.05);
 }
 
 /* YOUTUBE */
-.social-links a[href*="youtube.com"],
-.footer-links a[href*="youtube.com"]{
+.social-links a[href*="youtube.com"]{
   color:#ffffff;
   background:#ff0000;
 }
 
-.social-links a[href*="youtube.com"]:hover,
-.footer-links a[href*="youtube.com"]:hover{
+.social-links a[href*="youtube.com"]:hover{
   box-shadow:0 0 15px rgba(255,0,0,.6);
   transform:scale(1.05);
 }
@@ -139,7 +134,7 @@ body{
 
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(255, 1, 14, 0.516);
+  box-shadow:0 0 25px rgba(0,212,255,.25);
 }
 
 /* COLLAPSIBLE */
@@ -152,13 +147,6 @@ body{
   background:#0f1623;
   text-align:center;
   padding:30px 20px;
-}
-
-.footer-links{
-  margin-bottom:10px;
-  display:flex;
-  justify-content:center;
-  gap:20px;
 }
 
 /* MOBILE */
@@ -184,9 +172,4 @@ body{
   width:100%;
 }
 
-.social-links{
-  justify-content:flex-start;
 }
-
-}
-

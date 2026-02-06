@@ -1,4 +1,4 @@
-// TOP NAV SCROLL
+// SCROLL PELO MENU
 document.querySelectorAll(".top-nav button").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     const id = btn.dataset.target;
@@ -8,7 +8,7 @@ document.querySelectorAll(".top-nav button").forEach(btn=>{
   });
 });
 
-// COLLAPSIBLE
+// SEÇÕES EXPANSÍVEIS
 document.querySelectorAll(".collapsible").forEach(title=>{
   title.addEventListener("click", ()=>{
     const cards = title.nextElementSibling;
@@ -16,7 +16,7 @@ document.querySelectorAll(".collapsible").forEach(title=>{
   });
 });
 
-// SEARCH FILTER
+// BUSCA GLOBAL
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", ()=>{
