@@ -1,4 +1,4 @@
-// SCROLL PELO MENU
+// SCROLL MENU
 document.querySelectorAll(".top-nav button").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     const id = btn.dataset.target;
@@ -8,15 +8,14 @@ document.querySelectorAll(".top-nav button").forEach(btn=>{
   });
 });
 
-// SEÇÕES EXPANSÍVEIS
+// COLLAPSIBLE
 document.querySelectorAll(".collapsible").forEach(title=>{
   title.addEventListener("click", ()=>{
-    const cards = title.nextElementSibling;
-    cards.classList.toggle("hidden");
+    title.nextElementSibling.classList.toggle("hidden");
   });
 });
 
-// BUSCA GLOBAL
+// SEARCH FILTER
 const searchInput = document.getElementById("searchInput");
 
 searchInput.addEventListener("input", ()=>{
