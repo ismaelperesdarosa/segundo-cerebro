@@ -43,29 +43,28 @@ body{
   text-align:center;
 }
 
-/* LEFT EYE */
-.eye.left::before{
-  content: ".";
-  animation: leftEye 2s steps(1) infinite;
-}
-
-/* RIGHT EYE */
+/* LEFT & RIGHT EYES */
+.eye.left::before,
 .eye.right::before{
   content: ".";
-  animation: rightEye 2s steps(1) infinite;
+  display:inline-block;
+  animation: blinkEye 2s infinite;
 }
 
-/* ANIMATIONS */
-@keyframes leftEye{
-  0%{content:".";}
-  50%{content:"-";}
-  100%{content:".";}
-}
-
-@keyframes rightEye{
-  0%{content:".";}
-  50%{content:"-";}
-  100%{content:".";}
+/* BLINK ANIMATION */
+@keyframes blinkEye{
+  0%{
+    opacity:1;
+  }
+  10%{
+    opacity:0;
+  }
+  70%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
 }
 
 /* NAV */
@@ -207,3 +206,4 @@ body{
 }
 
 }
+
