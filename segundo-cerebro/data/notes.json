@@ -1,6 +1,20 @@
 [
   {
-    "title": "Primeira Nota",
-    "description": "Exemplo de nota do sistema."
+    "id": "html-basico",
+    "title": "HTML Básico",
+    "description": "Estrutura fundamental de páginas web.",
+    "tags": ["html", "frontend", "web"]
+  },
+  {
+    "id": "css-arquitetura",
+    "title": "Arquitetura CSS",
+    "description": "Organização de estilos em projetos grandes.",
+    "tags": ["css", "arquitetura", "frontend"]
+  },
+  {
+    "id": "javascript-modular",
+    "title": "JavaScript Modular",
+    "description": "Separação de responsabilidades em JS.",
+    "tags": ["javascript", "modularidade", "frontend"]
   }
 ]
