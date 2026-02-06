@@ -44,7 +44,7 @@ body{
 }
 
 .top-nav button:hover{
-  color:#00d4ff;
+  color:#ffffff76;
 }
 
 /* ACTIONS */
@@ -134,7 +134,7 @@ body{
 
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(0,212,255,.25);
+  box-shadow:0 0 25px rgba(204, 0, 17, 0.679);
 }
 
 /* COLLAPSIBLE */
