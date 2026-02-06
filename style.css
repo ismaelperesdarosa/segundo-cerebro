@@ -53,18 +53,10 @@ body{
 
 /* BLINK ANIMATION */
 @keyframes blinkEye{
-  0%{
-    opacity:1;
-  }
-  70%{
-    opacity:1;
-  }
-  80%{
-    opacity:0;
-  }
-  100%{
-    opacity:1;
-  }
+  0%{opacity:1;}
+  70%{opacity:1;}
+  80%{opacity:0;}
+  100%{opacity:1;}
 }
 
 /* NAV */
@@ -78,10 +70,15 @@ body{
   border:none;
   color:#cbd5f5;
   cursor:pointer;
+  transition:.2s;
 }
 
 .top-nav button:hover{
-  color:#00d4ff;
+  color:#ff0000;
+}
+
+.top-nav button:active{
+  color:#ff0000;
 }
 
 /* ACTIONS */
@@ -158,6 +155,19 @@ body{
   cursor:pointer;
 }
 
+/* COLLAPSIBLE TITLES */
+.collapsible{
+  transition: color .2s ease;
+}
+
+.collapsible:hover{
+  color:#cfc8c8;
+}
+
+.collapsible:active{
+  color:#ff0000;
+}
+
 /* CARDS */
 .cards{
   display:grid;
@@ -211,5 +221,4 @@ body{
 }
 
 }
-
 
