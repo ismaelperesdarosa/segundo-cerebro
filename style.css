@@ -30,23 +30,42 @@ body{
   font-size:1.4rem;
 }
 
-/* DOT BLINK */
-.dot{
-  animation: blink 1.5s infinite;
+/* FACE */
+.face{
+  display:flex;
+  align-items:center;
 }
 
-.dot:nth-of-type(1){
-  animation-delay:0s;
+/* EYES */
+.eye{
+  width:12px;
+  display:inline-block;
+  text-align:center;
 }
 
-.dot:nth-of-type(2){
-  animation-delay:.7s;
+/* LEFT EYE */
+.eye.left::before{
+  content: ".";
+  animation: leftEye 2s steps(1) infinite;
 }
 
-@keyframes blink{
-  0%{opacity:1;}
-  50%{opacity:.2;}
-  100%{opacity:1;}
+/* RIGHT EYE */
+.eye.right::before{
+  content: ".";
+  animation: rightEye 2s steps(1) infinite;
+}
+
+/* ANIMATIONS */
+@keyframes leftEye{
+  0%{content:".";}
+  50%{content:"-";}
+  100%{content:".";}
+}
+
+@keyframes rightEye{
+  0%{content:".";}
+  50%{content:"-";}
+  100%{content:".";}
 }
 
 /* NAV */
@@ -188,4 +207,3 @@ body{
 }
 
 }
-

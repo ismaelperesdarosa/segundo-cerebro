@@ -26,4 +26,3 @@ searchInput.addEventListener("input", ()=>{
     card.style.display = text.includes(value) ? "block" : "none";
   });
 });
-
