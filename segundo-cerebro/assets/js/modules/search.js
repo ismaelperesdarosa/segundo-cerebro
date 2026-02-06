@@ -16,11 +16,29 @@ function createTagElement(tag) {
   span.textContent = `#${tag}`;
 
   span.addEventListener("click", () => {
-    activeTag = tag;
+    if (activeTag === tag) {
+      activeTag = null;
+    } else {
+      activeTag = tag;
+    }
+
     applyFilters();
+    updateActiveTags();
   });
 
   return span;
+}
+
+/* ------------------------ */
+
+function updateActiveTags() {
+  document.querySelectorAll(".tag").forEach(tagEl => {
+    if (tagEl.textContent === `#${activeTag}`) {
+      tagEl.classList.add("tag--active");
+    } else {
+      tagEl.classList.remove("tag--active");
+    }
+  });
 }
 
 /* ------------------------ */
@@ -56,10 +74,7 @@ function render(containerId, notes) {
   if (!container) return;
 
   container.innerHTML = "";
-
-  notes.forEach(note => {
-    container.appendChild(createCard(note));
-  });
+  notes.forEach(note => container.appendChild(createCard(note)));
 }
 
 /* ------------------------ */
@@ -107,4 +122,3 @@ async function init() {
 }
 
 init();
-
