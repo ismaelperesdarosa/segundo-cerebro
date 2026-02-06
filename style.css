@@ -142,7 +142,7 @@ body{
 }
 
 .footer-links a:hover{
-  color:#00d4ff;
+  color:hsl(352, 100%, 52%);
 }
 
 /* MOBILE */
