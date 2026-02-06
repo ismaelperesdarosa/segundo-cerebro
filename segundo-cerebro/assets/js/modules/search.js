@@ -1,22 +1,58 @@
+let allNotes = [];
+let activeTag = null;
+
+/* ------------------------ */
+
 async function fetchNotes() {
   const response = await fetch("../../data/notes.json");
   return response.json();
 }
 
+/* ------------------------ */
+
+function createTagElement(tag) {
+  const span = document.createElement("span");
+  span.className = "tag";
+  span.textContent = `#${tag}`;
+
+  span.addEventListener("click", () => {
+    activeTag = tag;
+    applyFilters();
+  });
+
+  return span;
+}
+
+/* ------------------------ */
+
 function createCard(note) {
   const card = document.createElement("div");
   card.className = "card";
-  card.innerHTML = `
-    <h3>${note.title}</h3>
-    <p>${note.description}</p>
-  `;
+
+  const title = document.createElement("h3");
+  title.textContent = note.title;
+
+  const desc = document.createElement("p");
+  desc.textContent = note.description;
+
+  const tagsContainer = document.createElement("div");
+  tagsContainer.className = "tags";
+
+  note.tags.forEach(tag => {
+    tagsContainer.appendChild(createTagElement(tag));
+  });
+
+  card.appendChild(title);
+  card.appendChild(desc);
+  card.appendChild(tagsContainer);
+
   return card;
 }
 
-async function renderNotes(containerId) {
-  const notes = await fetchNotes();
-  const container = document.getElementById(containerId);
+/* ------------------------ */
 
+function render(containerId, notes) {
+  const container = document.getElementById(containerId);
   if (!container) return;
 
   container.innerHTML = "";
@@ -26,25 +62,49 @@ async function renderNotes(containerId) {
   });
 }
 
+/* ------------------------ */
+
+function applyFilters() {
+  const input = document.getElementById("searchInput");
+  const term = input ? input.value.toLowerCase() : "";
+
+  let filtered = allNotes;
+
+  if (term) {
+    filtered = filtered.filter(n =>
+      n.title.toLowerCase().includes(term)
+    );
+  }
+
+  if (activeTag) {
+    filtered = filtered.filter(n =>
+      n.tags.includes(activeTag)
+    );
+  }
+
+  render("notes-container", filtered);
+  render("latest-notes", filtered.slice(0, 6));
+}
+
+/* ------------------------ */
+
 function setupSearch() {
   const input = document.getElementById("searchInput");
   if (!input) return;
 
-  input.addEventListener("input", async () => {
-    const term = input.value.toLowerCase();
-    const notes = await fetchNotes();
-    const container = document.getElementById("notes-container");
-
-    container.innerHTML = "";
-
-    notes
-      .filter(n => n.title.toLowerCase().includes(term))
-      .forEach(n => container.appendChild(createCard(n)));
-  });
+  input.addEventListener("input", applyFilters);
 }
 
-/* AUTO INIT */
+/* ------------------------ */
 
-renderNotes("latest-notes");
-renderNotes("notes-container");
-setupSearch();
+async function init() {
+  allNotes = await fetchNotes();
+
+  render("latest-notes", allNotes.slice(0, 6));
+  render("notes-container", allNotes);
+
+  setupSearch();
+}
+
+init();
+
