@@ -25,7 +25,7 @@ body{
 }
 
 .logo{
-  color:#00d4ff;
+  color:#cbd5f5;
   font-size:1.4rem;
 }
 
@@ -44,7 +44,7 @@ body{
 }
 
 .top-nav button:hover{
-  color:#00d4ff;
+  color:#cbd5f5;
 }
 
 /* SEARCH */
