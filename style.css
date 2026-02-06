@@ -64,21 +64,46 @@ body{
   width:200px;
 }
 
-/* SOCIAL */
+/* SOCIAL LINKS BASE */
 .social-links{
   display:flex;
   gap:12px;
 }
 
-.social-links a{
-  color:#cbd5f5;
+.social-links a,
+.footer-links a{
   text-decoration:none;
   font-size:0.9rem;
+  padding:6px 10px;
+  border-radius:6px;
   transition:.3s;
+  font-weight:500;
 }
 
-.social-links a:hover{
-  color:#00d4ff;
+/* INSTAGRAM */
+.social-links a[href*="instagram.com"],
+.footer-links a[href*="instagram.com"]{
+  color:#ff4ecd;
+  background:linear-gradient(45deg,#ff4ecd,#ffb347);
+}
+
+.social-links a[href*="instagram.com"]:hover,
+.footer-links a[href*="instagram.com"]:hover{
+  box-shadow:0 0 15px rgba(255,78,205,.6);
+  transform:scale(1.05);
+}
+
+/* YOUTUBE */
+.social-links a[href*="youtube.com"],
+.footer-links a[href*="youtube.com"]{
+  color:#ffffff;
+  background:#ff0000;
+}
+
+.social-links a[href*="youtube.com"]:hover,
+.footer-links a[href*="youtube.com"]:hover{
+  box-shadow:0 0 15px rgba(255,0,0,.6);
+  transform:scale(1.05);
 }
 
 /* CONTENT */
@@ -114,7 +139,7 @@ body{
 
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(0,212,255,.25);
+  box-shadow:0 0 25px rgba(255, 1, 14, 0.516);
 }
 
 /* COLLAPSIBLE */
@@ -134,15 +159,6 @@ body{
   display:flex;
   justify-content:center;
   gap:20px;
-}
-
-.footer-links a{
-  color:#cbd5f5;
-  text-decoration:none;
-}
-
-.footer-links a:hover{
-  color:hsl(352, 100%, 52%);
 }
 
 /* MOBILE */
@@ -173,3 +189,4 @@ body{
 }
 
 }
+
