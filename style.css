@@ -73,12 +73,9 @@ body{
   transition:.2s;
 }
 
-.top-nav button:hover{
-  color:#ff0000;
-}
-
+.top-nav button:hover,
 .top-nav button:active{
-  color:#ff0000;
+  color:#ffffff;
 }
 
 /* ACTIONS */
@@ -116,26 +113,7 @@ body{
   border-radius:6px;
   transition:.3s;
   font-weight:500;
-}
-
-/* INSTAGRAM */
-.social-links a[href*="instagram.com"]{
   color:#ffffff;
-  background:linear-gradient(45deg,#ff4ecd,#ffb347);
-}
-
-.social-links a[href*="instagram.com"]:hover{
-  box-shadow:0 0 15px rgba(255,78,205,.6);
-}
-
-/* YOUTUBE */
-.social-links a[href*="youtube.com"]{
-  color:#ffffff;
-  background:#ff0000;
-}
-
-.social-links a[href*="youtube.com"]:hover{
-  box-shadow:0 0 15px rgba(255,0,0,.6);
 }
 
 /* CONTENT */
@@ -160,12 +138,9 @@ body{
   transition: color .2s ease;
 }
 
-.collapsible:hover{
-  color:#cfc8c8;
-}
-
+.collapsible:hover,
 .collapsible:active{
-  color:#ff0000;
+  color:#ffffff;
 }
 
 /* CARDS */
@@ -221,4 +196,3 @@ body{
 }
 
 }
-
