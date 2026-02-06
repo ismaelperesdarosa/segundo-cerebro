@@ -1,7 +1,0 @@
-button {
-  background: var(--accent);
-  border: none;
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius);
-  cursor: pointer;
-}
