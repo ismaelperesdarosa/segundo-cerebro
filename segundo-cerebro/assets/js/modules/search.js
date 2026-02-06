@@ -4,7 +4,7 @@ let activeTag = null;
 /* ------------------------ */
 
 async function fetchNotes() {
-  const response = await fetch("../../data/notes.json");
+  const response = await fetch("/segundo-cerebro/data/notes.json");
   return response.json();
 }
 
