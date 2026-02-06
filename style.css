@@ -56,10 +56,10 @@ body{
   0%{
     opacity:1;
   }
-  10%{
-    opacity:0;
-  }
   70%{
+    opacity:1;
+  }
+  80%{
     opacity:0;
   }
   100%{
@@ -94,11 +94,16 @@ body{
 /* SEARCH */
 #searchInput{
   background:#151c2c;
-  border:none;
+  border:1px solid #ffffff;
   padding:8px 12px;
   color:white;
   border-radius:6px;
   width:200px;
+  outline:none;
+}
+
+#searchInput:focus{
+  border-color:#ffffff;
 }
 
 /* SOCIAL LINKS */
@@ -206,4 +211,5 @@ body{
 }
 
 }
+
 
