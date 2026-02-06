@@ -51,12 +51,20 @@ body{
   animation: blinkEye 2s infinite;
 }
 
-/* BLINK */
+/* BLINK ANIMATION */
 @keyframes blinkEye{
-  0%{opacity:1;}
-  70%{opacity:1;}
-  80%{opacity:0;}
-  100%{opacity:1;}
+  0%{
+    opacity:1;
+  }
+  70%{
+    opacity:1;
+  }
+  80%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
 }
 
 /* NAV */
@@ -70,12 +78,10 @@ body{
   border:none;
   color:#cbd5f5;
   cursor:pointer;
-  transition:.2s;
 }
 
-.top-nav button:hover,
-.top-nav button:active{
-  color:#ffffff;
+.top-nav button:hover{
+  color:#00d4ff;
 }
 
 /* ACTIONS */
@@ -150,11 +156,6 @@ body{
 .block h2{
   margin-bottom:20px;
   cursor:pointer;
-  transition:.2s;
-}
-
-.block h2:hover{
-  color:#ffffff;
 }
 
 /* CARDS */
