@@ -1,11 +1,9 @@
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Variáveis */
 :root {
   --bg: #1e1e1e;
   --bg-card: #252526;
@@ -15,69 +13,67 @@
   --border: #333;
 }
 
-/* Corpo */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
-/* Topo */
+/* TOPO */
 .topbar {
   text-align: center;
-  padding: 2rem 1rem;
+  padding: 2.5rem 1rem;
   border-bottom: 1px solid var(--border);
 }
 
 .topbar h1 {
+  font-size: 2.5rem;
   color: var(--title);
-  font-size: 2.2rem;
 }
 
 .topbar p {
   opacity: 0.7;
 }
 
-/* Container */
+/* CONTAINER */
 .container {
   max-width: 900px;
   margin: auto;
   padding: 2rem 1rem;
 }
 
-/* Cards */
+/* CARDS */
 .card {
   background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
   border: 1px solid var(--border);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 1.7rem;
+  margin-bottom: 1.7rem;
+  transition: transform .35s ease, box-shadow .35s ease;
 }
 
-/* Hover */
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.45);
 }
 
-/* Títulos */
+/* TÍTULOS */
 h2 {
-  margin-bottom: 0.8rem;
   color: var(--title);
+  margin-bottom: .7rem;
 }
 
-/* Listas */
+/* LISTAS */
 ul {
-  padding-left: 1.2rem;
+  padding-left: 1.3rem;
 }
 
 li {
-  margin: 0.4rem 0;
+  margin: .4rem 0;
 }
 
-/* Links */
+/* LINKS */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -87,22 +83,22 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Rodapé */
+/* FOOTER */
 .footer {
   text-align: center;
-  padding: 1.5rem;
+  padding: 1.6rem;
   border-top: 1px solid var(--border);
-  opacity: 0.6;
+  opacity: .6;
 }
 
-/* Animação inicial */
+/* ANIMAÇÃO */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transform: translateY(30px);
 }
 
 .fade-in.show {
   opacity: 1;
   transform: translateY(0);
+  transition: all .7s ease;
 }
