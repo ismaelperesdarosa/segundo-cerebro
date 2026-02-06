@@ -13,6 +13,13 @@
 <header class="topbar">
   <h1 class="logo">ism._.pr</h1>
 
+  <nav class="top-nav">
+    <button data-target="sobre">Sobre</button>
+    <button data-target="projetos">Projetos</button>
+    <button data-target="artigos">Artigos</button>
+    <button data-target="blog">Blog</button>
+  </nav>
+
   <input 
     type="text" 
     id="searchInput" 
@@ -20,78 +27,51 @@
   >
 </header>
 
-<div class="layout">
+<main class="content">
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
+  <!-- SOBRE -->
+  <section id="sobre" class="block">
+    <h2>Sobre</h2>
+    <p>
+      Este espaço é dedicado ao compartilhamento de ideias, experiências e
+      aprendizados acumulados ao longo do tempo.
+    </p>
+  </section>
 
-    <button class="nav-item" data-target="sobre">Sobre</button>
-    <button class="nav-item" data-target="projetos">Projetos</button>
-    <button class="nav-item" data-target="artigos">Artigos</button>
-    <button class="nav-item" data-target="blog">Blog Pessoal</button>
+  <!-- PROJETOS -->
+  <section id="projetos" class="block">
+    <h2 class="collapsible">Projetos</h2>
 
-  </aside>
+    <div class="cards">
+      <div class="card">Projeto Base</div>
+      <div class="card">Projeto Experimental</div>
+      <div class="card">Projeto Conceitual</div>
+    </div>
+  </section>
 
-  <!-- CONTEÚDO -->
-  <main class="content">
+  <!-- ARTIGOS -->
+  <section id="artigos" class="block">
+    <h2 class="collapsible">Artigos</h2>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="block">
-      <h2>Sobre</h2>
-      <p>
-        Este espaço é dedicado ao compartilhamento de ideias, experiências e
-        aprendizados acumulados ao longo do tempo.
-      </p>
-    </section>
+    <div class="cards">
+      <div class="card">Artigo sobre Tecnologia</div>
+      <div class="card">Artigo sobre Filosofia</div>
+      <div class="card">Artigo sobre Sistemas</div>
+    </div>
+  </section>
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="block">
+  <!-- BLOG -->
+  <section id="blog" class="block">
+    <h2 class="collapsible">Blog Pessoal</h2>
 
-      <h2 class="collapsible">Projetos</h2>
+    <div class="cards">
+      <div class="card">Reflexões</div>
+      <div class="card">Anotações</div>
+      <div class="card">Experimentos</div>
+    </div>
+  </section>
 
-      <div class="cards">
-
-        <div class="card">Projeto Base</div>
-        <div class="card">Projeto Experimental</div>
-        <div class="card">Projeto Conceitual</div>
-
-      </div>
-
-    </section>
-
-    <!-- ARTIGOS -->
-    <section id="artigos" class="block">
-
-      <h2 class="collapsible">Artigos</h2>
-
-      <div class="cards">
-
-        <div class="card">Artigo sobre Tecnologia</div>
-        <div class="card">Artigo sobre Filosofia</div>
-        <div class="card">Artigo sobre Sistemas</div>
-
-      </div>
-
-    </section>
-
-    <!-- BLOG -->
-    <section id="blog" class="block">
-
-      <h2 class="collapsible">Blog Pessoal</h2>
-
-      <div class="cards">
-
-        <div class="card">Reflexões</div>
-        <div class="card">Anotações</div>
-        <div class="card">Experimentos</div>
-
-      </div>
-
-    </section>
-
-  </main>
-
-</div>
+</main>
 
 <footer class="footer">
   <p>© ism._.pr</p>

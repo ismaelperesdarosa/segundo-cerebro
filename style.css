@@ -13,12 +13,12 @@ body{
 
 /* TOPBAR */
 .topbar{
-  height:60px;
   background:#0f1623;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 20px;
+  gap:20px;
+  padding:15px 20px;
   position:sticky;
   top:0;
   z-index:1000;
@@ -29,6 +29,25 @@ body{
   font-size:1.4rem;
 }
 
+/* NAV */
+.top-nav{
+  display:flex;
+  gap:15px;
+}
+
+.top-nav button{
+  background:none;
+  border:none;
+  color:#cbd5f5;
+  cursor:pointer;
+  font-size:0.95rem;
+}
+
+.top-nav button:hover{
+  color:#00d4ff;
+}
+
+/* SEARCH */
 #searchInput{
   background:#151c2c;
   border:none;
@@ -38,46 +57,16 @@ body{
   width:220px;
 }
 
-/* LAYOUT */
-.layout{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  min-height:calc(100vh - 60px);
-}
-
-/* SIDEBAR */
-.sidebar{
-  background:#0f1623;
-  padding:20px;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.nav-item{
-  background:none;
-  border:none;
-  color:#cbd5f5;
-  text-align:left;
-  padding:10px;
-  cursor:pointer;
-  border-radius:6px;
-  transition:.3s;
-}
-
-.nav-item:hover{
-  background:#151c2c;
-  color:#00d4ff;
-}
-
 /* CONTENT */
 .content{
-  padding:40px;
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
 }
 
 /* BLOCK */
 .block{
-  margin-bottom:60px;
+  margin-bottom:70px;
 }
 
 .block h2{
@@ -88,20 +77,20 @@ body{
 /* CARDS */
 .cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
 }
 
 .card{
   background:#151c2c;
   padding:30px;
-  border-radius:10px;
+  border-radius:12px;
   transition:.3s;
 }
 
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 20px rgba(0,212,255,.25);
+  box-shadow:0 0 25px rgba(0,212,255,.25);
 }
 
 /* COLLAPSIBLE */
@@ -113,19 +102,24 @@ body{
 .footer{
   background:#0f1623;
   text-align:center;
-  padding:20px;
+  padding:25px;
 }
 
 /* MOBILE */
-@media(max-width:800px){
+@media(max-width:700px){
 
-.layout{
-  grid-template-columns:1fr;
+.topbar{
+  flex-direction:column;
+  align-items:flex-start;
 }
 
-.sidebar{
-  flex-direction:row;
-  overflow-x:auto;
+.top-nav{
+  width:100%;
+  justify-content:space-between;
+}
+
+#searchInput{
+  width:100%;
 }
 
 }

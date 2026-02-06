@@ -1,5 +1,5 @@
-// SIDEBAR SCROLL
-document.querySelectorAll(".nav-item").forEach(btn=>{
+// TOP NAV SCROLL
+document.querySelectorAll(".top-nav button").forEach(btn=>{
   btn.addEventListener("click", ()=>{
     const id = btn.dataset.target;
     document.getElementById(id).scrollIntoView({
@@ -8,7 +8,7 @@ document.querySelectorAll(".nav-item").forEach(btn=>{
   });
 });
 
-// COLLAPSIBLE SECTIONS
+// COLLAPSIBLE
 document.querySelectorAll(".collapsible").forEach(title=>{
   title.addEventListener("click", ()=>{
     const cards = title.nextElementSibling;
