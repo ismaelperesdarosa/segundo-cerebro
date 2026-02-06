@@ -30,6 +30,23 @@ body{
   font-size:1.4rem;
 }
 
+/* BLINK EFFECT (OPEN/CLOSE) */
+.blink{
+  display:inline-block;
+  transform-origin:center;
+  animation: blinkEyes 4s infinite;
+}
+
+@keyframes blinkEyes{
+  0%, 92%, 100%{
+    transform:scaleY(1);
+  }
+
+  94%, 96%{
+    transform:scaleY(0.1);
+  }
+}
+
 /* NAV */
 .top-nav{
   display:flex;
@@ -62,6 +79,11 @@ body{
   color:white;
   border-radius:6px;
   width:200px;
+  outline:none;
+}
+
+#searchInput:focus{
+  box-shadow:0 0 0 2px #ffffff;
 }
 
 /* SOCIAL LINKS */
@@ -134,7 +156,7 @@ body{
 
 .card:hover{
   transform:translateY(-6px);
-  box-shadow:0 0 25px rgba(204, 0, 17, 0.679);
+  box-shadow:0 0 25px rgba(204,0,17,.6);
 }
 
 /* COLLAPSIBLE */
