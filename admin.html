@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Painel Editor</title>
+
+  <!-- GrapesJS CSS -->
+  <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet"/>
+
+  <!-- GrapesJS Script -->
+  <script src="https://unpkg.com/grapesjs"></script>
+
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="gjs" style="height:100vh;"></div>
+
+<script>
+const editor = grapesjs.init({
+  container: '#gjs',
+  height: '100%',
+  fromElement: false,
+  storageManager: false
+});
+
+// Botão para exportar código
+editor.Panels.addButton('options', [{
+  id: 'export',
+  className: 'fa fa-download',
+  command: 'export-template',
+  attributes: { title: 'Exportar Código' }
+}]);
+</script>
+
+</body>
+</html>
