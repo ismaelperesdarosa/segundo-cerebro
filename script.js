@@ -1,7 +1,5 @@
 const navButtons = document.querySelectorAll(".top-nav button");
 const sections = document.querySelectorAll("main section[id]");
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".card");
 
 function setActiveNav(targetId) {
   navButtons.forEach((button) => {
@@ -36,12 +34,3 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
-
-searchInput?.addEventListener("input", () => {
-  const value = searchInput.value.trim().toLowerCase();
-
-  cards.forEach((card) => {
-    const text = card.textContent.toLowerCase();
-    card.classList.toggle("is-hidden", value !== "" && !text.includes(value));
-  });
-});
