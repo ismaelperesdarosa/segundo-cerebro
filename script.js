@@ -1,34 +1,47 @@
-const tabButtons = document.querySelectorAll(".tab-button");
-const tabPanels = document.querySelectorAll(".tab-panel");
+const navButtons = document.querySelectorAll(".top-nav button");
+const sections = document.querySelectorAll("main section[id]");
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".card");
 
-function activateTab(targetId){
-  tabButtons.forEach((button)=>{
-    const isActive = button.dataset.target === targetId;
-    button.classList.toggle("active", isActive);
-    button.setAttribute("aria-selected", String(isActive));
-  });
-
-  tabPanels.forEach((panel)=>{
-    const isActive = panel.id === targetId;
-    panel.classList.toggle("active", isActive);
-    panel.hidden = !isActive;
+function setActiveNav(targetId) {
+  navButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.target === targetId);
   });
 }
 
-tabButtons.forEach((button)=>{
-  button.addEventListener("click", ()=>{
-    activateTab(button.dataset.target);
+navButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = document.getElementById(button.dataset.target);
+    if (!target) return;
+
+    setActiveNav(button.dataset.target);
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 
-// SEARCH FILTER
-const searchInput = document.getElementById("searchInput");
+const observer = new IntersectionObserver(
+  (entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-searchInput.addEventListener("input", ()=>{
-  const value = searchInput.value.toLowerCase();
+    if (visible) {
+      setActiveNav(visible.target.id);
+    }
+  },
+  {
+    threshold: 0.35,
+    rootMargin: "-15% 0px -50% 0px",
+  }
+);
 
-  document.querySelectorAll(".card").forEach(card=>{
+sections.forEach((section) => observer.observe(section));
+
+searchInput?.addEventListener("input", () => {
+  const value = searchInput.value.trim().toLowerCase();
+
+  cards.forEach((card) => {
     const text = card.textContent.toLowerCase();
-    card.style.display = text.includes(value) ? "block" : "none";
+    card.classList.toggle("is-hidden", value !== "" && !text.includes(value));
   });
 });
